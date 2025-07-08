@@ -3,61 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pathfinder 2e — Полный лист</title>
+  <title>Pathfinder 2e — Характеристики и интерфейс</title>
   <link rel="stylesheet" href="assets/style.css" />
   <script src="assets/script.js" defer></script>
 </head>
 <body>
   <div class="menu">
-    <button onclick="loadFromGist()">📥 Загрузить</button>
-    <button onclick="saveToGist()">💾 Сохранить</button>
-    <button onclick="exportJSON()">📤 JSON</button>
-    <button onclick="window.print()">🖨️ PDF</button>
-    <button onclick="authorize()">🔐 Войти</button>
+    <div class="menu-scroll">
+      <button onclick="loadFromGist()">📥 Загрузить</button>
+      <button onclick="saveToGist()">💾 Сохранить</button>
+      <button onclick="exportJSON()">📤 JSON</button>
+      <button onclick="window.print()">🖨️ PDF</button>
+      <button onclick="authorize()">🔐 Войти</button>
+    </div>
   </div>
 
   <div class="sheet">
-    <h1>Pathfinder 2e — Лист персонажа (Полный)</h1>
-    <section>
-      <h2>Основное</h2>
-      <label>Имя персонажа <input id="char_name" /></label>
-      <label>Имя игрока <input id="player_name" /></label>
-      <label>Класс и уровень <input id="class_level" /></label>
-      <label>Народ <input id="ancestry" /></label>
-      <label>Происхождение <input id="background" /></label>
-      <label>Мировоззрение <input id="alignment" /></label>
-      <label>Божество <input id="deity" /></label>
-      <label>XP <input id="xp" /></label>
-    </section>
+    <h1>Pathfinder 2e — Лист персонажа</h1>
 
     <section>
-      <h2>Параметры</h2>
-      <label>Сила <input id="str" /></label>
-      <label>Ловкость <input id="dex" /></label>
-      <label>Выносливость <input id="con" /></label>
-      <label>Интеллект <input id="int" /></label>
-      <label>Мудрость <input id="wis" /></label>
-      <label>Харизма <input id="cha" /></label>
-    </section>
-
-    <section>
-      <h2>Навыки</h2>
-      <textarea id="skills" placeholder="Акробатика, Атлетика, и т.д."></textarea>
-    </section>
-
-    <section>
-      <h2>Удары</h2>
-      <textarea id="attacks" placeholder="Меч — +5, 1к8+3 урона, колющее и т.д."></textarea>
-    </section>
-
-    <section>
-      <h2>Заклинания</h2>
-      <textarea id="spells" placeholder="Фокусы, Круги 1-10..."></textarea>
-    </section>
-
-    <section>
-      <h2>Личность</h2>
-      <textarea id="personality" placeholder="Описание, союзники, враги, фразы..."></textarea>
+      <h2>Характеристики</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Характеристика</th>
+            <th>Значение</th>
+            <th>Модиф.</th>
+            <th>Предмет</th>
+            <th>Усиление</th>
+            <th>Временное</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Сила</td><td><input id="str_val" /></td><td><input id="str_mod" /></td><td><input id="str_item" /></td><td><input id="str_enh" /></td><td><input id="str_temp" /></td></tr>
+          <tr><td>Ловкость</td><td><input id="dex_val" /></td><td><input id="dex_mod" /></td><td><input id="dex_item" /></td><td><input id="dex_enh" /></td><td><input id="dex_temp" /></td></tr>
+          <tr><td>Выносливость</td><td><input id="con_val" /></td><td><input id="con_mod" /></td><td><input id="con_item" /></td><td><input id="con_enh" /></td><td><input id="con_temp" /></td></tr>
+          <tr><td>Интеллект</td><td><input id="int_val" /></td><td><input id="int_mod" /></td><td><input id="int_item" /></td><td><input id="int_enh" /></td><td><input id="int_temp" /></td></tr>
+          <tr><td>Мудрость</td><td><input id="wis_val" /></td><td><input id="wis_mod" /></td><td><input id="wis_item" /></td><td><input id="wis_enh" /></td><td><input id="wis_temp" /></td></tr>
+          <tr><td>Харизма</td><td><input id="cha_val" /></td><td><input id="cha_mod" /></td><td><input id="cha_item" /></td><td><input id="cha_enh" /></td><td><input id="cha_temp" /></td></tr>
+        </tbody>
+      </table>
     </section>
   </div>
 </body>

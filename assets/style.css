@@ -4,49 +4,56 @@ body {
   background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
   font-family: 'Segoe UI', sans-serif;
 }
-.sheet {
-  max-width: 960px;
-  margin: 5rem auto;
-  background: rgba(255,255,255,0.95);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
 .menu {
   position: fixed;
   top: 0;
   width: 100%;
   background: #dbeafe;
+  overflow-x: auto;
+  white-space: nowrap;
+  z-index: 100;
+}
+.menu-scroll {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
-  padding: 1rem;
-  z-index: 10;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  justify-content: flex-start;
 }
 .menu button {
+  flex-shrink: 0;
   background: #2563eb;
   color: white;
   border: none;
+  padding: 0.5rem 0.75rem;
   border-radius: 6px;
-  padding: 0.5rem 1rem;
   font-weight: bold;
   cursor: pointer;
+}
+.sheet {
+  max-width: 960px;
+  margin: 5rem auto;
+  padding: 2rem;
+  background: rgba(255,255,255,0.96);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 h1, h2 {
   text-align: center;
 }
-label {
-  display: block;
-  margin: 0.5rem 0;
-}
-input, textarea {
+table {
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.2rem;
-  box-sizing: border-box;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin-top: 1rem;
 }
-textarea {
-  resize: vertical;
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.4rem;
+  text-align: center;
+}
+input {
+  width: 100%;
+  padding: 0.3rem;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #aaa;
 }

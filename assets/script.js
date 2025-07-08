@@ -1,5 +1,4 @@
 let token = localStorage.getItem('token') || '';
-
 function getData() {
   return Object.fromEntries([...document.querySelectorAll('input, textarea')].map(el => [el.id, el.value]));
 }
