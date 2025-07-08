@@ -3,95 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pathfinder 2e - PDF Style</title>
+  <title>Pathfinder 2e - Лист Персонажа</title>
   <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 </head>
 <body>
+  <div class="menu">
+    <button onclick="loadFromGist()">📥 Загрузить</button>
+    <button onclick="saveToGist()">💾 Сохранить</button>
+    <button onclick="exportJSON()">📤 JSON</button>
+    <button onclick="exportPDF()">🖨️ PDF</button>
+    <button onclick="authorize()">🔐 Войти</button>
+  </div>
+
   <div class="container">
     <h1>📜 Pathfinder 2e — Лист Персонажа</h1>
 
-    <section class="section">
+    <section>
       <h2>Параметры здоровья</h2>
-      <label>Макс. ПЗ <input /></label>
-      <label>Текущие ПЗ <input /></label>
-      <label>Временные ПЗ <input /></label>
-      <label>Урон <input /></label>
+      <label>Макс. ПЗ <input id="hp_max" /></label>
+      <label>Текущие ПЗ <input id="hp_now" /></label>
+      <label>Временные ПЗ <input id="hp_temp" /></label>
+      <label>Урон <input id="hp_dmg" /></label>
     </section>
 
-    <section class="section">
+    <section>
       <h2>Испытания</h2>
-      <div class="test-grid">
-        <label>Стойкость <input /></label>
-        <label>Реакция <input /></label>
-        <label>Воля <input /></label>
-        <label>Класс брони <input /></label>
-        <label>Восприятие <input /></label>
-      </div>
+      <label>Стойкость <input id="fort" /></label>
+      <label>Реакция <input id="ref" /></label>
+      <label>Воля <input id="will" /></label>
+      <label>Класс брони <input id="ac" /></label>
+      <label>Восприятие <input id="perception" /></label>
     </section>
 
-    <section class="section">
+    <section>
       <h2>Характеристики</h2>
-      <div class="grid-3">
-        <label>Сила <input /></label>
-        <label>Ловкость <input /></label>
-        <label>Выносливость <input /></label>
-        <label>Интеллект <input /></label>
-        <label>Мудрость <input /></label>
-        <label>Харизма <input /></label>
-      </div>
+      <label>СИЛ <input id="str" /></label>
+      <label>ЛВК <input id="dex" /></label>
+      <label>ВЫН <input id="con" /></label>
+      <label>ИНТ <input id="int" /></label>
+      <label>МДР <input id="wis" /></label>
+      <label>ХАР <input id="cha" /></label>
     </section>
 
-    <section class="section">
+    <section>
       <h2>Навыки</h2>
-      <div class="skills">
-        <label>Акробатика <input /></label>
-        <label>Атлетика <input /></label>
-        <label>Скрытность <input /></label>
-        <label>Запугивание <input /></label>
-        <label>Медицина <input /></label>
-        <label>Обман <input /></label>
-        <label>Общество <input /></label>
-        <label>Религия <input /></label>
-        <label>Мистицизм <input /></label>
-        <label>Оккультизм <input /></label>
-        <label>Выживание <input /></label>
-        <label>Ремесло <input /></label>
-        <label>Знания <input /></label>
-        <label>Исполнение <input /></label>
-      </div>
+      <textarea id="skills" placeholder="Акробатика, Атлетика, Запугивание, и др."></textarea>
     </section>
 
-    <section class="section">
-      <h2>Ближний и дальний бой</h2>
-      <label>Оружие 1 <input /></label>
-      <label>Оружие 2 <input /></label>
-      <label>Оружие 3 <input /></label>
+    <section>
+      <h2>Бой</h2>
+      <textarea id="attacks" placeholder="Оружие, урон, модификаторы..."></textarea>
     </section>
 
-    <section class="section">
+    <section>
       <h2>Снаряжение</h2>
-      <textarea placeholder="Перечислите снаряжение..."></textarea>
+      <textarea id="inventory" placeholder="Предметы, вес, статус..."></textarea>
     </section>
 
-    <section class="section">
-      <h2>Черты и способности (по уровням)</h2>
-      <textarea placeholder="Черта 1, Черта 2, ..."></textarea>
+    <section>
+      <h2>Черты и способности</h2>
+      <textarea id="feats" placeholder="Черта 1, Черта 2, Особенность 1 и т.д."></textarea>
     </section>
 
-    <section class="section">
+    <section>
       <h2>Заклинания</h2>
-      <textarea placeholder="Фокусы, ячейки, описания..."></textarea>
+      <textarea id="spells" placeholder="Фокусы, уровни, круги, описания..."></textarea>
     </section>
 
-    <section class="section">
+    <section>
       <h2>Действия</h2>
-      <textarea placeholder="Обычные, свободные, ответные..."></textarea>
+      <textarea id="actions" placeholder="Обычные, свободные, ответные действия..."></textarea>
     </section>
 
-    <section class="section">
-      <h2>Заметки и личность</h2>
-      <textarea placeholder="Портрет, личность, враги, союзники, фразы..."></textarea>
+    <section>
+      <h2>Личность и заметки</h2>
+      <textarea id="notes" placeholder="Место рождения, этнос, союзники, фразы..."></textarea>
     </section>
   </div>
+
+  <script src="assets/script.js"></script>
 </body>
 </html>

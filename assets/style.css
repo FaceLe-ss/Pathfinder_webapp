@@ -4,19 +4,42 @@ body {
   background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
   font-family: "Segoe UI", sans-serif;
 }
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #e2e8f0;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  z-index: 1000;
+}
+.menu button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.menu button:hover {
+  background: #2563eb;
+}
 .container {
   max-width: 960px;
-  margin: 2rem auto;
+  margin: 5rem auto 2rem;
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.97);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 h1 {
   text-align: center;
   margin-bottom: 2rem;
 }
-.section {
+section {
   margin-bottom: 2rem;
 }
 label {
@@ -25,26 +48,13 @@ label {
 }
 input, textarea {
   width: 100%;
-  padding: 0.4rem;
+  padding: 0.5rem;
   margin-top: 0.2rem;
+  margin-bottom: 0.8rem;
   box-sizing: border-box;
-  border-radius: 4px;
   border: 1px solid #ccc;
+  border-radius: 6px;
 }
 textarea {
   resize: vertical;
-}
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-.test-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.7rem;
-}
-.skills {
-  columns: 2;
-  gap: 2rem;
 }
