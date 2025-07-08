@@ -2,58 +2,50 @@ body {
   margin: 0;
   padding: 0;
   background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-  font-family: "Segoe UI", sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+}
+.sheet {
+  max-width: 960px;
+  margin: 5rem auto;
+  background: rgba(255,255,255,0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 .menu {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #e2e8f0;
-  padding: 0.75rem;
+  background: #dbeafe;
   display: flex;
+  gap: 1rem;
   justify-content: center;
-  gap: 0.5rem;
-  z-index: 1000;
+  padding: 1rem;
+  z-index: 10;
 }
 .menu button {
-  background: #3b82f6;
+  background: #2563eb;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
   border-radius: 6px;
-  cursor: pointer;
+  padding: 0.5rem 1rem;
   font-weight: bold;
+  cursor: pointer;
 }
-.menu button:hover {
-  background: #2563eb;
-}
-.container {
-  max-width: 960px;
-  margin: 5rem auto 2rem;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.97);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-}
-h1 {
+h1, h2 {
   text-align: center;
-  margin-bottom: 2rem;
-}
-section {
-  margin-bottom: 2rem;
 }
 label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
 }
 input, textarea {
   width: 100%;
   padding: 0.5rem;
   margin-top: 0.2rem;
-  margin-bottom: 0.8rem;
   box-sizing: border-box;
-  border: 1px solid #ccc;
   border-radius: 6px;
+  border: 1px solid #ccc;
 }
 textarea {
   resize: vertical;
