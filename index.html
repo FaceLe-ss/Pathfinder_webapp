@@ -4,8 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pathfinder WebApp</title>
+  <link rel="stylesheet" href="./assets/style.css" />
 </head>
 <body>
-  <div id="root">Приложение Pathfinder успешно собрано. 🚀</div>
+  <div id="root">
+    <h1>🧙 Pathfinder Character Sheet</h1>
+    <div>
+      <label>Имя персонажа: <input id="char-name" /></label><br />
+      <label>Класс: <input id="char-class" /></label><br />
+      <label>Уровень: <input type="number" id="char-level" value="1" /></label><br />
+    </div>
+    <button onclick="exportJSON()">📤 Экспорт в JSON</button>
+  </div>
+  <script src="./assets/index.js"></script>
 </body>
 </html>
