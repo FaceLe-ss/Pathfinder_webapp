@@ -2,20 +2,56 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pathfinder WebApp</title>
-  <link rel="stylesheet" href="./assets/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pathfinder 2e Лист Персонажа</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 </head>
 <body>
-  <div id="root">
-    <h1>🧙 Pathfinder Character Sheet</h1>
-    <div>
-      <label>Имя персонажа: <input id="char-name" /></label><br />
-      <label>Класс: <input id="char-class" /></label><br />
-      <label>Уровень: <input type="number" id="char-level" value="1" /></label><br />
+  <div class="sheet" id="sheet">
+    <h1>📜 Лист Персонажа Pathfinder 2e</h1>
+    <div class="block">
+      <label>Имя персонажа: <input id="name" /></label>
+      <label>Класс: <input id="class" /></label>
+      <label>Уровень: <input id="level" type="number" value="1" /></label>
+      <label>Народ и родословная: <input id="ancestry" /></label>
+      <label>Происхождение: <input id="background" /></label>
+      <label>Божество: <input id="deity" /></label>
     </div>
-    <button onclick="exportJSON()">📤 Экспорт в JSON</button>
+    <div class="block">
+      <h2>🧠 Характеристики</h2>
+      <label>СИЛ: <input id="str" type="number" /></label>
+      <label>ЛВК: <input id="dex" type="number" /></label>
+      <label>ВЫН: <input id="con" type="number" /></label>
+      <label>ИНТ: <input id="int" type="number" /></label>
+      <label>МДР: <input id="wis" type="number" /></label>
+      <label>ХАР: <input id="cha" type="number" /></label>
+    </div>
+    <div class="block">
+      <h2>🧩 Черты и Способности</h2>
+      <textarea id="feats" rows="4" placeholder="Черты и способности..."></textarea>
+    </div>
+    <div class="block">
+      <h2>🪄 Заклинания</h2>
+      <textarea id="spells" rows="4" placeholder="Заклинания..."></textarea>
+    </div>
+    <div class="block">
+      <h2>🎯 Действия</h2>
+      <textarea id="actions" rows="3" placeholder="Обычные действия..."></textarea>
+      <textarea id="freeActions" rows="2" placeholder="Свободные действия..."></textarea>
+    </div>
+    <div class="block">
+      <h2>🎒 Снаряжение</h2>
+      <textarea id="inventory" rows="3" placeholder="Список предметов..."></textarea>
+    </div>
+    <div class="block buttons">
+      <button onclick="exportJSON()">📤 JSON</button>
+      <button onclick="exportPDF()">🖨️ PDF</button>
+      <button onclick="authorize()">🔐 GitHub Войти</button>
+      <button onclick="saveToGist()">💾 Сохранить</button>
+      <button onclick="loadFromGist()">📥 Загрузить</button>
+    </div>
   </div>
-  <script src="./assets/index.js"></script>
+  <script src="assets/index.js"></script>
 </body>
 </html>
