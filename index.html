@@ -3,55 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pathfinder 2e Лист Персонажа</title>
+  <title>Pathfinder 2e Лист</title>
   <link rel="stylesheet" href="assets/style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 </head>
 <body>
   <div class="sheet" id="sheet">
-    <h1>📜 Лист Персонажа Pathfinder 2e</h1>
-    <div class="block">
-      <label>Имя персонажа: <input id="name" /></label>
-      <label>Класс: <input id="class" /></label>
-      <label>Уровень: <input id="level" type="number" value="1" /></label>
-      <label>Народ и родословная: <input id="ancestry" /></label>
-      <label>Происхождение: <input id="background" /></label>
-      <label>Божество: <input id="deity" /></label>
-    </div>
-    <div class="block">
-      <h2>🧠 Характеристики</h2>
-      <label>СИЛ: <input id="str" type="number" /></label>
-      <label>ЛВК: <input id="dex" type="number" /></label>
-      <label>ВЫН: <input id="con" type="number" /></label>
-      <label>ИНТ: <input id="int" type="number" /></label>
-      <label>МДР: <input id="wis" type="number" /></label>
-      <label>ХАР: <input id="cha" type="number" /></label>
-    </div>
-    <div class="block">
-      <h2>🧩 Черты и Способности</h2>
-      <textarea id="feats" rows="4" placeholder="Черты и способности..."></textarea>
-    </div>
-    <div class="block">
-      <h2>🪄 Заклинания</h2>
-      <textarea id="spells" rows="4" placeholder="Заклинания..."></textarea>
-    </div>
-    <div class="block">
-      <h2>🎯 Действия</h2>
-      <textarea id="actions" rows="3" placeholder="Обычные действия..."></textarea>
-      <textarea id="freeActions" rows="2" placeholder="Свободные действия..."></textarea>
-    </div>
-    <div class="block">
-      <h2>🎒 Снаряжение</h2>
-      <textarea id="inventory" rows="3" placeholder="Список предметов..."></textarea>
-    </div>
-    <div class="block buttons">
-      <button onclick="exportJSON()">📤 JSON</button>
-      <button onclick="exportPDF()">🖨️ PDF</button>
-      <button onclick="authorize()">🔐 GitHub Войти</button>
-      <button onclick="saveToGist()">💾 Сохранить</button>
-      <button onclick="loadFromGist()">📥 Загрузить</button>
-    </div>
+    <h1>Pathfinder 2e — Лист Персонажа</h1>
+
+    <section><h2>Основное</h2>
+      <label>Имя персонажа <input /></label>
+      <label>Имя игрока <input /></label>
+      <label>Класс <input /></label>
+      <label>Уровень <input type="number" /></label>
+      <label>Народ и родословная <input /></label>
+      <label>Происхождение <input /></label>
+      <label>Мировоззрение <input /></label>
+      <label>Божество <input /></label>
+      <label>Опыт <input /></label>
+      <label>Очки геройства <input /></label>
+    </section>
+
+    <section><h2>Характеристики</h2>
+      <label>Сила (СИЛ) <input type="number" /></label>
+      <label>Ловкость (ЛВК) <input type="number" /></label>
+      <label>Выносливость (ВЫН) <input type="number" /></label>
+      <label>Интеллект (ИНТ) <input type="number" /></label>
+      <label>Мудрость (МДР) <input type="number" /></label>
+      <label>Харизма (ХАР) <input type="number" /></label>
+    </section>
+
+    <section><h2>Испытания</h2>
+      <label>Стойкость <input type="number" /></label>
+      <label>Реакция <input type="number" /></label>
+      <label>Воля <input type="number" /></label>
+      <label>Класс брони (КБ) <input type="number" /></label>
+      <label>Восприятие <input type="number" /></label>
+    </section>
+
+    <section><h2>Умения</h2>
+      <label>Акробатика <input /></label>
+      <label>Атлетика <input /></label>
+      <label>Медицина <input /></label>
+      <label>Запугивание <input /></label>
+      <label>Обман <input /></label>
+      <label>Знание (религия) <input /></label>
+      <label>Скрытность <input /></label>
+      <label>Общество <input /></label>
+      <label>Исполнение <input /></label>
+      <label>Выживание <input /></label>
+      <label>Мистицизм <input /></label>
+      <label>Оккультизм <input /></label>
+      <label>Ремесло <input /></label>
+    </section>
+
+    <section><h2>Бой</h2>
+      <label>Ближний бой — Удар 1 <input /></label>
+      <label>Ближний бой — Удар 2 <input /></label>
+      <label>Дальний бой — Удар 1 <input /></label>
+      <label>Дальний бой — Удар 2 <input /></label>
+    </section>
+
+    <section><h2>Снаряжение</h2>
+      <textarea rows="3" placeholder="Перечислите предметы..."></textarea>
+    </section>
+
+    <section><h2>Черты и способности</h2>
+      <textarea rows="4" placeholder="Расовые, классовые, общие..."></textarea>
+    </section>
+
+    <section><h2>Действия</h2>
+      <textarea rows="3" placeholder="Обычные, свободные, ответные действия..."></textarea>
+    </section>
+
+    <section><h2>Заклинания</h2>
+      <textarea rows="3" placeholder="Заклинания, фокусы, ячейки..."></textarea>
+    </section>
+
+    <section><h2>Личность и заметки</h2>
+      <textarea rows="3" placeholder="Фразы, внешность, верования, союзники, враги..."></textarea>
+    </section>
   </div>
-  <script src="assets/index.js"></script>
 </body>
 </html>
