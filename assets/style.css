@@ -1,59 +1,56 @@
 body {
   margin: 0;
-  padding: 0;
+  font-family: sans-serif;
   background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-  font-family: 'Segoe UI', sans-serif;
 }
 .menu {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #dbeafe;
-  overflow-x: auto;
-  white-space: nowrap;
-  z-index: 100;
-}
-.menu-scroll {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
-  padding: 0.75rem;
-  justify-content: flex-start;
+  justify-content: center;
+  background: #eee;
+  padding: 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 .menu button {
-  flex-shrink: 0;
-  background: #2563eb;
+  background: #1e3a8a;
   color: white;
   border: none;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
   font-weight: bold;
-  cursor: pointer;
 }
 .sheet {
-  max-width: 960px;
-  margin: 5rem auto;
-  padding: 2rem;
-  background: rgba(255,255,255,0.96);
+  max-width: 900px;
+  margin: 2rem auto;
+  background: rgba(255,255,255,0.95);
+  padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+section {
+  margin-bottom: 2rem;
 }
 h1, h2 {
   text-align: center;
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
+label {
+  display: block;
+  margin: 0.5rem 0;
 }
-th, td {
-  border: 1px solid #ccc;
+input, textarea {
+  width: 100%;
   padding: 0.4rem;
-  text-align: center;
-}
-input {
-  width: 100%;
-  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   box-sizing: border-box;
-  border-radius: 4px;
-  border: 1px solid #aaa;
+}
+.attributes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+textarea {
+  min-height: 100px;
 }

@@ -1,48 +1,75 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pathfinder 2e — Характеристики и интерфейс</title>
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta charset="UTF-8">
+  <title>Pathfinder 2e — Лист персонажа</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/style.css">
   <script src="assets/script.js" defer></script>
 </head>
 <body>
   <div class="menu">
-    <div class="menu-scroll">
-      <button onclick="loadFromGist()">📥 Загрузить</button>
-      <button onclick="saveToGist()">💾 Сохранить</button>
-      <button onclick="exportJSON()">📤 JSON</button>
-      <button onclick="window.print()">🖨️ PDF</button>
-      <button onclick="authorize()">🔐 Войти</button>
-    </div>
+    <button onclick="loadFromGist()">📥 Загрузить</button>
+    <button onclick="saveToGist()">💾 Сохранить</button>
+    <button onclick="exportJSON()">📤 JSON</button>
+    <button onclick="window.print()">🖨️ PDF</button>
+    <button onclick="authorize()">🔐 GitHub</button>
   </div>
 
   <div class="sheet">
-    <h1>Pathfinder 2e — Лист персонажа</h1>
+    <h1>БЛАНК ПЕРСОНАЖА Pathfinder 2e</h1>
+
+    <section>
+      <h2>Общее</h2>
+      <label>Имя персонажа <input id="char_name" /></label>
+      <label>Имя игрока <input id="player_name" /></label>
+      <label>Народ и происхождение <input id="origin" /></label>
+      <label>Класс <input id="class" /></label>
+      <label>Мировоззрение <input id="alignment" /></label>
+      <label>Божество <input id="deity" /></label>
+      <label>Уровень <input id="level" type="number" /></label>
+      <label>Очки опыта <input id="xp" type="number" /></label>
+    </section>
 
     <section>
       <h2>Характеристики</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Характеристика</th>
-            <th>Значение</th>
-            <th>Модиф.</th>
-            <th>Предмет</th>
-            <th>Усиление</th>
-            <th>Временное</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Сила</td><td><input id="str_val" /></td><td><input id="str_mod" /></td><td><input id="str_item" /></td><td><input id="str_enh" /></td><td><input id="str_temp" /></td></tr>
-          <tr><td>Ловкость</td><td><input id="dex_val" /></td><td><input id="dex_mod" /></td><td><input id="dex_item" /></td><td><input id="dex_enh" /></td><td><input id="dex_temp" /></td></tr>
-          <tr><td>Выносливость</td><td><input id="con_val" /></td><td><input id="con_mod" /></td><td><input id="con_item" /></td><td><input id="con_enh" /></td><td><input id="con_temp" /></td></tr>
-          <tr><td>Интеллект</td><td><input id="int_val" /></td><td><input id="int_mod" /></td><td><input id="int_item" /></td><td><input id="int_enh" /></td><td><input id="int_temp" /></td></tr>
-          <tr><td>Мудрость</td><td><input id="wis_val" /></td><td><input id="wis_mod" /></td><td><input id="wis_item" /></td><td><input id="wis_enh" /></td><td><input id="wis_temp" /></td></tr>
-          <tr><td>Харизма</td><td><input id="cha_val" /></td><td><input id="cha_mod" /></td><td><input id="cha_item" /></td><td><input id="cha_enh" /></td><td><input id="cha_temp" /></td></tr>
-        </tbody>
-      </table>
+      <div class="attributes">
+        <div class="attr"><h3>СИЛ</h3><input placeholder="Мод" id="str_mod" /><input placeholder="Знач" id="str_val" /></div>
+        <div class="attr"><h3>ЛВК</h3><input placeholder="Мод" id="dex_mod" /><input placeholder="Знач" id="dex_val" /></div>
+        <div class="attr"><h3>ВЫН</h3><input placeholder="Мод" id="con_mod" /><input placeholder="Знач" id="con_val" /></div>
+        <div class="attr"><h3>ИНТ</h3><input placeholder="Мод" id="int_mod" /><input placeholder="Знач" id="int_val" /></div>
+        <div class="attr"><h3>МДР</h3><input placeholder="Мод" id="wis_mod" /><input placeholder="Знач" id="wis_val" /></div>
+        <div class="attr"><h3>ХАР</h3><input placeholder="Мод" id="cha_mod" /><input placeholder="Знач" id="cha_val" /></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Испытания и Броня</h2>
+      <label>Стойкость <input id="fortitude" /></label>
+      <label>Реакция <input id="reflex" /></label>
+      <label>Воля <input id="will" /></label>
+      <label>Класс Брони (КБ) <input id="ac" /></label>
+      <label>Щит <input id="shield" /></label>
+    </section>
+
+    <section>
+      <h2>ПЗ и Внимание</h2>
+      <label>Макс. ПЗ <input id="hp_max" /></label>
+      <label>Текущие ПЗ <input id="hp_current" /></label>
+      <label>Временные ПЗ <input id="hp_temp" /></label>
+      <label>Внимание <input id="focus" /></label>
+      <label>Восприятие <input id="perception" /></label>
+    </section>
+
+    <section>
+      <h2>Удары</h2>
+      <textarea id="melee_attacks" placeholder="Ближний бой..."></textarea>
+      <textarea id="ranged_attacks" placeholder="Дальний бой..."></textarea>
+    </section>
+
+    <section>
+      <h2>Навыки</h2>
+      <textarea id="skills" placeholder="Список навыков..."></textarea>
     </section>
   </div>
 </body>
