@@ -2,6 +2,24 @@
 body {
   margin: 0;
   font-family: sans-serif;
+  background: #f4f1e5;
+}
+.menu {
+  text-align: center;
+  background: #ddd;
+  padding: 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.menu button {
+  margin: 0.2rem;
+  padding: 0.5rem 1rem;
+  background: #1e40af;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
 }
 .page {
   position: relative;

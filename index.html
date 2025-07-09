@@ -5,14 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pathfinder 2e Character Sheet</title>
   <link rel="stylesheet" href="assets/style.css" />
+  <script>
+    function showPage(n) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach((p, i) => p.style.display = i === n ? 'block' : 'none');
+    }
+  </script>
 </head>
 <body>
-  <div class="page" style="background-image: url('assets/page_1.png');">
+  <div class="menu">
+    <button onclick="showPage(0)">Стр. 1</button>
+    <button onclick="showPage(1)">Стр. 2</button>
+    <button onclick="showPage(2)">Стр. 3</button>
+    <button onclick="showPage(3)">Стр. 4</button>
+  </div>
+
+  <div class="page" style="background-image: url('assets/page_1.png'); display: block;">
     <input class="field" style="top: 5.5%; left: 30%; width: 40%;" placeholder="Имя персонажа"/>
     <input class="field" style="top: 8.5%; left: 30%; width: 40%;" placeholder="Имя игрока"/>
     <input class="field" style="top: 11.5%; left: 30%; width: 20%;" placeholder="Народ"/>
     <input class="field" style="top: 11.5%; left: 51%; width: 20%;" placeholder="Происхождение"/>
-    <!-- Добавим еще поля позже -->
   </div>
+  <div class="page" style="background-image: url('assets/page_2.png'); display: none;"></div>
+  <div class="page" style="background-image: url('assets/page_3.png'); display: none;"></div>
+  <div class="page" style="background-image: url('assets/page_4.png'); display: none;"></div>
 </body>
 </html>
