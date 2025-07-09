@@ -1,56 +1,24 @@
+
 body {
   margin: 0;
   font-family: sans-serif;
-  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
 }
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  background: #eee;
-  padding: 0.5rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-.menu button {
-  background: #1e3a8a;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: bold;
-}
-.sheet {
-  max-width: 900px;
-  margin: 2rem auto;
-  background: rgba(255,255,255,0.95);
-  padding: 1rem;
-  border-radius: 10px;
-}
-section {
-  margin-bottom: 2rem;
-}
-h1, h2 {
-  text-align: center;
-}
-label {
-  display: block;
-  margin: 0.5rem 0;
-}
-input, textarea {
+.page {
+  position: relative;
   width: 100%;
-  padding: 0.4rem;
+  max-width: 1000px;
+  margin: auto;
+  aspect-ratio: 8.5 / 11;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+.field {
+  position: absolute;
+  padding: 2px 4px;
+  font-size: 12px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.85);
   box-sizing: border-box;
-}
-.attributes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-}
-textarea {
-  min-height: 100px;
 }
